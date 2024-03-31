@@ -21,7 +21,6 @@ class AddItemDialog extends StatefulWidget {
 class _AddItemDialogState extends State<AddItemDialog> {
   late HiveBloc bloc;
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
-  String errorMessage = '';
   final TextEditingController controller = TextEditingController();
 
   @override

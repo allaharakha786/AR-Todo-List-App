@@ -32,6 +32,7 @@ class HiveBloc extends Bloc<HiveEvents, HiveStates> {
     try {
       event.box.itemName = event.controller.text.toString();
       event.box.save();
+      emit(state.copyWith(states: StatusEnum.INITIAL_STATE));
     } catch (e) {
       emit(state.copyWith(states: StatusEnum.ERROR_STATE));
     }
@@ -54,7 +55,7 @@ class HiveBloc extends Bloc<HiveEvents, HiveStates> {
           .where(
               (item) => item.itemName.toLowerCase().contains(event.controller))
           .toList();
-      emit(state.copyWith(items: values));
+      emit(state.copyWith(items: values, states: StatusEnum.INITIAL_STATE));
     } catch (e) {
       emit(state.copyWith(states: StatusEnum.ERROR_STATE));
     }
