@@ -1,0 +1,6 @@
+enum StatusEnum {
+  ERROR_STATE,
+  CHECKBOX_STATE,
+  INITIAL_STATE,
+  ADDED_STATE,
+}
